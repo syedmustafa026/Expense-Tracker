@@ -5,7 +5,6 @@ import AppReducer from './AppReducer';
 const initialState = {
   transactions: []
 }
-
 // Create context
 export const GlobalContext = createContext(initialState);
 
@@ -20,14 +19,12 @@ export const GlobalProvider = ({ children }) => {
       payload: id
     });
   }
-
   function addTransaction(transaction) {
     dispatch({
       type: 'ADD_TRANSACTION',
       payload: transaction
     });
   }
-
   return (<GlobalContext.Provider value={{
     transactions: state.transactions,
     deleteTransaction,
